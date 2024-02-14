@@ -201,8 +201,9 @@ def alert_embed(server: Server, alert: Alert):
     time_format = '%Y-%m-%d %I:%M:%S%p' if int(server.style_data.get('clock_format', '12')) == 12 else '%Y-%m-%d %H:%M:%S'
     query_time = datetime.now(tz=tz(server.style_data.get('timezone', 'Etc/UTC'))).strftime(time_format)
     query_time = t('embed.alert.footer.query_time', locale).format(query_time=query_time)
-    icon_url = 'https://avatars.githubusercontent.com/u/61296017'
-    embed.set_footer(text=f'DiscordGSM {__version__} | {query_time}', icon_url=icon_url)
+    icon_url = 'https://ark.wiki.gg/images/thumb/0/0a/ASA_Logo_transparent.png/630px-ASA_Logo_transparent.png'
+    embed.set_footer(text=f'ARK Server Monitor | {last_update}', icon_url=icon_url)
+    #embed.set_footer(text=f'DiscordGSM {__version__} | {advertisement} | {last_update}', icon_url=icon_url)
 
     return embed
 
